@@ -1,12 +1,16 @@
+<<<<<<< HEAD
 //
 // Grid system
 // --------------------------------------------------
 
 
+=======
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
 // Container widths
 //
 // Set the container width, and override it for fixed navbars in media queries.
 
+<<<<<<< HEAD
 .container {
   @include container-fixed;
 
@@ -32,19 +36,61 @@
 }
 
 
+=======
+@if $enable-grid-classes {
+  .container {
+    @include make-container();
+    @include make-container-max-widths();
+  }
+}
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but with 100% width for
+// fluid, full width layouts.
+
+@if $enable-grid-classes {
+  .container-fluid {
+    @include make-container();
+  }
+}
+
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
 // Row
 //
 // Rows contain and clear the floats of your columns.
 
+<<<<<<< HEAD
 .row {
   @include make-row;
 }
 
+=======
+@if $enable-grid-classes {
+  .row {
+    @include make-row();
+  }
+
+  // Remove the negative margin from default .row, then the horizontal padding
+  // from all immediate children columns (to prevent runaway style inheritance).
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
 
 // Columns
 //
 // Common styles for small and large grid columns
 
+<<<<<<< HEAD
 @include make-grid-columns;
 
 
@@ -81,4 +127,8 @@
 
 @media (min-width: $screen-lg-min) {
   @include make-grid(lg);
+=======
+@if $enable-grid-classes {
+  @include make-grid-columns();
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
 }

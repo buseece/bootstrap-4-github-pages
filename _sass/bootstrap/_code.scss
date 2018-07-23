@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 //
 // Code (inline and block)
 // --------------------------------------------------
 
 
+=======
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
 // Inline and block code styles
 code,
 kbd,
@@ -13,33 +16,59 @@ samp {
 
 // Inline code
 code {
+<<<<<<< HEAD
   padding: 2px 4px;
   font-size: 90%;
   color: $code-color;
   background-color: $code-bg;
   border-radius: $border-radius-base;
+=======
+  font-size: $code-font-size;
+  color: $code-color;
+  word-break: break-word;
+
+  // Streamline the style when inside anchors to avoid broken underline and more
+  a > & {
+    color: inherit;
+  }
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
 }
 
 // User input typically entered via keyboard
 kbd {
+<<<<<<< HEAD
   padding: 2px 4px;
   font-size: 90%;
   color: $kbd-color;
   background-color: $kbd-bg;
   border-radius: $border-radius-small;
   box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+=======
+  padding: $kbd-padding-y $kbd-padding-x;
+  font-size: $kbd-font-size;
+  color: $kbd-color;
+  background-color: $kbd-bg;
+  @include border-radius($border-radius-sm);
+  @include box-shadow($kbd-box-shadow);
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
 
   kbd {
     padding: 0;
     font-size: 100%;
+<<<<<<< HEAD
     font-weight: bold;
     box-shadow: none;
+=======
+    font-weight: $nested-kbd-font-weight;
+    @include box-shadow(none);
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
   }
 }
 
 // Blocks of code
 pre {
   display: block;
+<<<<<<< HEAD
   padding: (($line-height-computed - 1) / 2);
   margin: 0 0 ($line-height-computed / 2);
   font-size: ($font-size-base - 1); // 14px to 13px
@@ -59,6 +88,16 @@ pre {
     white-space: pre-wrap;
     background-color: transparent;
     border-radius: 0;
+=======
+  font-size: $code-font-size;
+  color: $pre-color;
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
   }
 }
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Clearfix
 //
 // For modern browsers
@@ -18,5 +19,12 @@
   }
   &:after {
     clear: both;
+=======
+@mixin clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
   }
 }

@@ -5,6 +5,7 @@
     color: $color;
     background-color: $background;
 
+<<<<<<< HEAD
     // [converter] extracted a&, button& to a.list-group-item-#{$state}, button.list-group-item-#{$state}
   }
 
@@ -27,6 +28,19 @@
       color: #fff;
       background-color: $color;
       border-color: $color;
+=======
+    &.list-group-item-action {
+      @include hover-focus {
+        color: $color;
+        background-color: darken($background, 5%);
+      }
+
+      &.active {
+        color: $white;
+        background-color: $color;
+        border-color: $color;
+      }
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
     }
   }
 }

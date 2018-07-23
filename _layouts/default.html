@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 	<html lang="en">
 		<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,3 +29,24 @@
 			</footer>
 		</body>
 	</html>
+=======
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <div class="py-5">
+      <div class="container page-content">
+          {{ content }}
+      </div>
+    </div>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>
+>>>>>>> 35189469ff1977835a922537d165fde11610370a

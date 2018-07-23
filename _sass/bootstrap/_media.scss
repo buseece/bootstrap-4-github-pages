@@ -1,4 +1,5 @@
 .media {
+<<<<<<< HEAD
   // Proper spacing between instances of .media
   margin-top: 15px;
 
@@ -63,4 +64,12 @@
 .media-list {
   padding-left: 0;
   list-style: none;
+=======
+  display: flex;
+  align-items: flex-start;
+}
+
+.media-body {
+  flex: 1;
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
 }

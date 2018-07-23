@@ -1,4 +1,5 @@
 //
+<<<<<<< HEAD
 // Tables
 // --------------------------------------------------
 
@@ -18,10 +19,15 @@ th {
 
 
 // Baseline styles
+=======
+// Basic Bootstrap table
+//
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
 
 .table {
   width: 100%;
   max-width: 100%;
+<<<<<<< HEAD
   margin-bottom: $line-height-computed;
   // Cells
   > thead,
@@ -59,12 +65,34 @@ th {
   }
 
   // Nesting
+=======
+  margin-bottom: $spacer;
+  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+
+  th,
+  td {
+    padding: $table-cell-padding;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
   .table {
     background-color: $body-bg;
   }
 }
 
 
+<<<<<<< HEAD
 // Condensed table w/ half padding
 
 .table-condensed {
@@ -77,10 +105,21 @@ th {
         padding: $table-condensed-cell-padding;
       }
     }
+=======
+//
+// Condensed table w/ half padding
+//
+
+.table-sm {
+  th,
+  td {
+    padding: $table-cell-padding-sm;
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
   }
 }
 
 
+<<<<<<< HEAD
 // Bordered version
 //
 // Add borders all around the table and between all the columns.
@@ -101,18 +140,52 @@ th {
     > th,
     > td {
       border-bottom-width: 2px;
+=======
+// Border versions
+//
+// Add or remove borders all around the table and between all the columns.
+
+.table-bordered {
+  border: $table-border-width solid $table-border-color;
+
+  th,
+  td {
+    border: $table-border-width solid $table-border-color;
+  }
+
+  thead {
+    th,
+    td {
+      border-bottom-width: (2 * $table-border-width);
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
     }
   }
 }
 
+<<<<<<< HEAD
+=======
+.table-borderless {
+  th,
+  td,
+  thead th,
+  tbody + tbody {
+    border: 0;
+  }
+}
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
 
 // Zebra-striping
 //
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
 .table-striped {
+<<<<<<< HEAD
   > tbody > tr:nth-of-type(odd) {
     background-color: $table-bg-accent;
+=======
+  tbody tr:nth-of-type(#{$table-striped-order}) {
+    background-color: $table-accent-bg;
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
   }
 }
 
@@ -122,12 +195,20 @@ th {
 // Placed here since it has to come after the potential zebra striping
 
 .table-hover {
+<<<<<<< HEAD
   > tbody > tr:hover {
     background-color: $table-bg-hover;
+=======
+  tbody tr {
+    @include hover {
+      background-color: $table-hover-bg;
+    }
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
   }
 }
 
 
+<<<<<<< HEAD
 // Table cell sizing
 //
 // Reset default table behavior
@@ -229,6 +310,96 @@ table {
         }
       }
 
+=======
+// Table backgrounds
+//
+// Exact selectors below required to override `.table-striped` and prevent
+// inheritance to nested tables.
+
+@each $color, $value in $theme-colors {
+  @include table-row-variant($color, theme-color-level($color, -9));
+}
+
+@include table-row-variant(active, $table-active-bg);
+
+
+// Dark styles
+//
+// Same table markup, but inverted color scheme: dark background and light text.
+
+// stylelint-disable-next-line no-duplicate-selectors
+.table {
+  .thead-dark {
+    th {
+      color: $table-dark-color;
+      background-color: $table-dark-bg;
+      border-color: $table-dark-border-color;
+    }
+  }
+
+  .thead-light {
+    th {
+      color: $table-head-color;
+      background-color: $table-head-bg;
+      border-color: $table-border-color;
+    }
+  }
+}
+
+.table-dark {
+  color: $table-dark-color;
+  background-color: $table-dark-bg;
+
+  th,
+  td,
+  thead th {
+    border-color: $table-dark-border-color;
+  }
+
+  &.table-bordered {
+    border: 0;
+  }
+
+  &.table-striped {
+    tbody tr:nth-of-type(odd) {
+      background-color: $table-dark-accent-bg;
+    }
+  }
+
+  &.table-hover {
+    tbody tr {
+      @include hover {
+        background-color: $table-dark-hover-bg;
+      }
+    }
+  }
+}
+
+
+// Responsive tables
+//
+// Generate series of `.table-responsive-*` classes for configuring the screen
+// size of where your table will overflow.
+
+.table-responsive {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &#{$infix} {
+      @include media-breakpoint-down($breakpoint) {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
+
+        // Prevent double border on horizontal scroll due to use of `display: block;`
+        > .table-bordered {
+          border: 0;
+        }
+      }
+>>>>>>> 35189469ff1977835a922537d165fde11610370a
     }
   }
 }
